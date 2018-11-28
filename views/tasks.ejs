@@ -46,12 +46,12 @@
         <form action="/tasks/assign" method="post">
         <label class="col-md-3 col-sm-offset-2 control-label" for="name">Assign To</label>
         <div class="col-sm-5">
-            <input type="text" class="form-control" name="name" value="<%=name %>"
+            <input type="text" class="form-control" name="assignee" value="<%=assignee %>"
                    placeholder="Name of the person" id="name"><br><br>
         </div>
-        <label class="col-md-3 col-sm-offset-2 control-label" for="taskname">Task description</label>
+        <label class="col-md-3 col-sm-offset-2 control-label" for="taskDesc">Task description</label>
         <div class="col-sm-5">
-            <input type="text" class="form-control" name="taskname" value="<%=taskname %>"
+            <input type="text" class="form-control" name="taskDesc" value="<%=taskDesc %>"
                    placeholder="Short description of task" id="taskname"><br><br>
         </div>
         <div class="col-sm-5 col-sm-offset-4">

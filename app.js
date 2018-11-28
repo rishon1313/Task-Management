@@ -4,10 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var http = require('http');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var tasks = require('./routes/tasks');
+var chat = require('./routes/chat');
 var app = express();
 
 // view engine setup
@@ -25,13 +27,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/tasks',tasks);
+app.use('/chat',chat);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -42,5 +44,23 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// Set up mongoose connection
+const mongoose = require('mongoose');
+var dev_db_url = 'mongodb://rishon1313:MZ5vq4Jifdzdgs3@ds117164.mlab.com:17164/task-mgr';
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB,{ useNewUrlParser: true });
+mongoose.Promise = global.Promise;
+
+var port = 3333;
+
+app.listen(port,() => {
+    console.log('Server is up and running on port number ' + port);
+});
+
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 module.exports = app;

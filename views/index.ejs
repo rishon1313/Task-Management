@@ -32,7 +32,7 @@
       <ul class="nav navbar-nav select-active">
         <li class="active"><a href="/">Home</a></li>
         <li class=""><a href="/">All Tasks</a></li>
-        <li class=""><a href="http://10.182.58.184:3000/chat" target="_blank">Chat</a></li>
+        <li class=""><a href="http://127.0.0.1:3000/chat/" >Chat</a></li>
         <li><a href="/tasks/createTask/" class="btn btn-xs btn-default create-btn" style="padding:5px 10px;">Create New Task</a></li>
       </ul>
     </div>
@@ -42,7 +42,8 @@
 <div class="container page-wrapper">
 
   <div class="col-md-offset-1 col-md-10">
-    <h2>Task Management</h2><hr>
+    <img src="https://img.icons8.com/ios/50/000000/task-filled.png"/>
+    <h2 style="display: inline-block">Task Management</h2><hr>
 
     <br>
     <!--<a href="/task/all-tasks/" class="btn btn-info" style="margin-bottom:20px">Show All Tasks </a>-->
@@ -56,12 +57,12 @@
           <h3 class="panel-title">To Do</h3>
         </div>
         <div class="panel-body" style="height:160px">
-          <b><%= taskList[i].taskname %></b>
+          <b><%= taskList[i].taskDesc %></b>
         </div>
         <div class="panel-footer">
           <div class="row">
             <div class="col-md-8">
-              <b>Assigned to: <%= taskList[i].name %></b>
+              <b>Assigned to: <%= taskList[i].assignee %></b>
             </div>
           </div>
 
@@ -69,8 +70,7 @@
       </div>
     </div>
       <%  }; %>
-</div>
-  <canvas id="canvas"></canvas>
+  </div>
 </div>
 
 <div class="footer">
