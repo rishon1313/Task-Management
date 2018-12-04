@@ -32,7 +32,7 @@
       <ul class="nav navbar-nav select-active">
         <li class="active"><a href="/">Home</a></li>
         <li class=""><a href="/">All Tasks</a></li>
-        <li class=""><a href="https://chat-ezy.herokuapp.com/chat/" >Chat</a></li>
+        <li class=""><a href="https://chat-ezy.herokuapp.com/chat/" target="_blank">Chat</a></li>
         <li><a href="/tasks/createTask/" class="btn btn-xs btn-default create-btn" style="padding:5px 10px;">Create New Task</a></li>
       </ul>
     </div>
@@ -57,7 +57,7 @@
           <h3 class="panel-title">To Do</h3>
         </div>
         <div class="panel-body" style="height:160px">
-          <b><%= taskList[i].taskDesc %></b>
+          <b><%- taskList[i].taskDesc %></b>
         </div>
         <div class="panel-footer">
           <div class="row">

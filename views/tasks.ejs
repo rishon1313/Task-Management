@@ -47,12 +47,12 @@
         <label class="col-md-3 col-sm-offset-2 control-label" for="name">Assign To</label>
         <div class="col-sm-5">
             <input type="text" class="form-control" name="assignee" value="<%=assignee %>"
-                   placeholder="Name of the person" id="name"><br><br>
+                   placeholder="Name of the person" id="assignee"><br><br>
         </div>
         <label class="col-md-3 col-sm-offset-2 control-label" for="taskDesc">Task description</label>
         <div class="col-sm-5">
-            <input type="text" class="form-control" name="taskDesc" value="<%=taskDesc %>"
-                   placeholder="Short description of task" id="taskname"><br><br>
+            <textarea class="form-control" rows="5" id="taskDesc" name="taskDesc" value="<%=taskDesc %>"
+                      placeholder="Short description of task" id="taskname"></textarea><br><br>
         </div>
         <div class="col-sm-5 col-sm-offset-4">
             <button style="width:200px;font-family: verdana;font-weight: bolder" id="assign" type="submit"
@@ -70,5 +70,10 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+    });
+</script>
 </body>
 </html>
